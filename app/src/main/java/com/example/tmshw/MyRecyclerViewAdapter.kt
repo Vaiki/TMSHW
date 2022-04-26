@@ -3,6 +3,7 @@ package com.example.tmshw
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmshw.databinding.ItemTaskBinding
@@ -18,6 +19,15 @@ class MyRecyclerViewAdapter(private val taskList: List<Task>) :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
       holder.bind(taskList[position])
+        holder.itemView.setOnClickListener { v ->
+            if (position == 0) {
+                val activity = v!!.context as AppCompatActivity
+                val taskOneFragment = TaskOneFragment()
+                activity.supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container_view_tag, taskOneFragment).addToBackStack(null).commit()
+
+            }
+        }
     }
 
     override fun getItemCount(): Int {
@@ -25,7 +35,7 @@ class MyRecyclerViewAdapter(private val taskList: List<Task>) :
     }
 }
 
-class MyViewHolder(val binding: ItemTaskBinding) : RecyclerView.ViewHolder(binding.root) {
+class MyViewHolder(private val binding: ItemTaskBinding) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(task: Task) {
         binding.numTaskTv.text = task.numTask.toString()

@@ -7,7 +7,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:layout_margin="20dp"
         android:clickable="true"
         android:focusable="true"
@@ -18,20 +18,49 @@
             android:id="@+id/taskCardView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bg_task">
+            android:background="@color/mycolor">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/num_task_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/aclonica"
+
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/white"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/tvTask"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="3" />
+
+            <TextView
+                android:id="@+id/tvTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/aclonica"
                 android:padding="10dp"
+                android:text="TASK"
                 android:textColor="@color/white"
-                android:textSize="34sp"
+                android:textSize="48sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="166dp"
+                android:layout_height="124dp"
+                android:layout_marginTop="28dp"
+                app:layout_constraintStart_toEndOf="@+id/num_task_tv"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="TASK 1" />
+                app:srcCompat="@drawable/andr" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
