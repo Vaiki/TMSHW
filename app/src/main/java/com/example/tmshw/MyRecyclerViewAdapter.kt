@@ -1,5 +1,6 @@
 package com.example.tmshw
 
+import android.text.TextUtils.replace
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,13 +19,14 @@ class MyRecyclerViewAdapter(private val taskList: List<Task>) :
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-      holder.bind(taskList[position])
+        holder.bind(taskList[position])
         holder.itemView.setOnClickListener { v ->
             if (position == 0) {
                 val activity = v!!.context as AppCompatActivity
                 val taskOneFragment = TaskOneFragment()
                 activity.supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container_view_tag, taskOneFragment).addToBackStack(null).commit()
+                    .replace(R.id.fragment_container_view_tag, taskOneFragment).addToBackStack(null)
+                    .commit()
 
             }
         }
@@ -39,7 +41,6 @@ class MyViewHolder(private val binding: ItemTaskBinding) : RecyclerView.ViewHold
 
     fun bind(task: Task) {
         binding.numTaskTv.text = task.numTask.toString()
-
 
     }
 }

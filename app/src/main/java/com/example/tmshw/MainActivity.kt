@@ -17,12 +17,6 @@ class MainActivity : AppCompatActivity() {
             replace(R.id.fragment_container_view_tag, recyclerViewFragment)
             commit()
         }
-
-
     }
 
-
-    private fun displayTaskList() {
-
-    }
 }
