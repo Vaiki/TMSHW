@@ -2,4 +2,25 @@
     <string name="app_name">TMSHW</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fit">Fit!</string>
+    <string name="wont_fit">Will not fit!</string>
+    <string name="task1">1. Если число А четное, то прибавить B, иначе умножить на B</string>
+    <string name="a">A</string>
+    <string name="b">B</string>
+    <string name="equals">=</string>
+    <string name="accept">accept</string>
+    <string name="task3">3. Определить оценку студента по его рейтингу</string>
+    <string name="r">R</string>
+    <string name="dec">Dec</string>
+    <string name="ans3">Твоя оценка:</string>
+    <string name="task2">2. Max (abc, a+b+c)</string>
+    <string name="c">C</string>
+    <string name="d">D</string>
+    <string name="max">MAX</string>
+    <string name="task4">4. Вложить конверт AB в конверт CD</string>
+    <string name="insert">Insert</string>
+    <string name="task5">5. Сумма четных чисел с 1..99:</string>
+    <string name="task52">Количество четных чисел в 1..99:</string>
+    <string name="task6">6.</string>
+    <string name="task62">in Bin:</string>
 </resources>
