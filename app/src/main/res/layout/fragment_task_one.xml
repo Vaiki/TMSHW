@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-
     <FrameLayout
 
         android:layout_width="match_parent"
@@ -198,15 +197,15 @@
                 android:layout_height="48dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:autofillHints="Int"
                 android:ems="10"
                 android:hint="@string/a"
-                android:inputType="number"
 
+                android:inputType="number"
                 android:maxLength="4"
                 android:textAlignment="center"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_task2"
-                android:autofillHints="Int" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_task2" />
 
             <EditText
                 android:id="@+id/et_B_task2"
@@ -214,12 +213,12 @@
                 android:layout_height="48dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
+                android:autofillHints="Int"
                 android:ems="10"
                 android:hint="@string/b"
                 android:inputType="number"
                 android:maxLength="4"
                 android:textAlignment="center"
-                android:autofillHints="Int"
                 app:layout_constraintStart_toEndOf="@+id/et_A_task2"
                 app:layout_constraintTop_toBottomOf="@+id/tv_task2" />
 
@@ -229,12 +228,12 @@
                 android:layout_height="48dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
+                android:autofillHints="Int"
                 android:ems="10"
                 android:hint="@string/c"
                 android:inputType="number"
                 android:maxLength="4"
                 android:textAlignment="center"
-                android:autofillHints="Int"
                 app:layout_constraintStart_toEndOf="@+id/et_B_task2"
                 app:layout_constraintTop_toBottomOf="@+id/tv_task2" />
 
@@ -244,12 +243,12 @@
                 android:layout_height="48dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
+                android:autofillHints="Int"
                 android:ems="10"
                 android:hint="@string/d"
                 android:inputType="number"
                 android:maxLength="4"
                 android:textAlignment="center"
-                android:autofillHints="Int"
                 app:layout_constraintStart_toEndOf="@+id/et_C_task2"
                 app:layout_constraintTop_toBottomOf="@+id/tv_task2" />
 
