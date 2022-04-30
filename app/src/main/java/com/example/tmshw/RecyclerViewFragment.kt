@@ -11,7 +11,7 @@ import com.example.tmshw.databinding.FragmentRecyclerViewBinding
 
 
 class RecyclerViewFragment : Fragment() {
-    private var binding: FragmentRecyclerViewBinding? = null
+    private lateinit var  binding: FragmentRecyclerViewBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -23,10 +23,10 @@ class RecyclerViewFragment : Fragment() {
             Task(6), Task(7), Task(8))
 
         val adapter = MyRecyclerViewAdapter(taskList)
-        binding?.taskRecycler?.adapter = adapter
-        binding?.taskRecycler?.layoutManager = LinearLayoutManager(context)
+        binding.taskRecycler.adapter = adapter
+        binding.taskRecycler.layoutManager = LinearLayoutManager(context)
 
-        return binding?.root
+        return binding.root
 
 
     }
