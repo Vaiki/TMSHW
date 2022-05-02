@@ -74,22 +74,19 @@ class TaskOneFragment : Fragment(), View.OnClickListener {
         binding.tvAns52.text = count.toString()
 
         //task 6
-        binding.etDec.addTextChangedListener(object :TextWatcher{
+        binding.etDec.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
 
             override fun onTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
-              if (s.toString()!=""){
-
-                  binding.tvAns6.text = Integer.toBinaryString(s.toString().toInt())
-              }else binding.tvAns6.text = "-"
+                if (s.toString() != "") {
+                    binding.tvAns6.text = Integer.toBinaryString(s.toString().toInt())
+                } else binding.tvAns6.text = "-"
             }
 
             override fun afterTextChanged(p0: Editable?) {
-
             }
-
         })
 
         return binding.root
@@ -200,7 +197,8 @@ class TaskOneFragment : Fragment(), View.OnClickListener {
                     else -> binding.etDTask3.text.toString().toInt()
                 }
 
-                if ((a <= c && b <= d) || (a <= d && b <= c)) binding.answer4.text = getString(R.string.fit)
+                if ((a <= c && b <= d) || (a <= d && b <= c)) binding.answer4.text =
+                    getString(R.string.fit)
                 else binding.answer4.text = getString(R.string.wont_fit)
             }
         }
