@@ -1,4 +1,4 @@
-package com.example.tmshw
+package com.example.tmshw.tasks
 
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -7,10 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import com.example.tmshw.R
 import com.example.tmshw.databinding.FragmentTimerBinding
-import kotlinx.coroutines.CoroutineScope
 import java.util.*
-import java.util.concurrent.TimeUnit
 
 
 class TimerFragment : Fragment() {

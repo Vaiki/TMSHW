@@ -1,12 +1,14 @@
-package com.example.tmshw
+package com.example.tmshw.recyclerView
 
-import android.text.TextUtils.replace
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tmshw.tasks.ArithmeticFragment
+import com.example.tmshw.R
+import com.example.tmshw.data.Task
+import com.example.tmshw.tasks.TimerFragment
 import com.example.tmshw.databinding.ItemTaskBinding
 
 class MyRecyclerViewAdapter(private val taskList: List<Task>) :
@@ -25,7 +27,7 @@ class MyRecyclerViewAdapter(private val taskList: List<Task>) :
                 0 -> {
                     val activity = v!!.context as AppCompatActivity
                     activity.supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container_view_tag, TaskOneFragment())
+                        .replace(R.id.fragment_container_view_tag, ArithmeticFragment())
                         .addToBackStack(null)
                         .commit()
                 }

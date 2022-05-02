@@ -3,8 +3,8 @@ package com.example.tmshw
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tmshw.databinding.ActivityMainBinding
+import com.example.tmshw.recyclerView.TaskRVFragment
 
 class MainActivity : AppCompatActivity() {
     private var binding: ActivityMainBinding? = null
@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        val recyclerViewFragment = RecyclerViewFragment()
+        val recyclerViewFragment = TaskRVFragment()
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.fragment_container_view_tag, recyclerViewFragment)
             commit()

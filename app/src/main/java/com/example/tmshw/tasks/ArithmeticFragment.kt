@@ -1,4 +1,4 @@
-package com.example.tmshw
+package com.example.tmshw.tasks
 
 import android.os.Bundle
 import android.text.Editable
@@ -10,10 +10,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import com.example.tmshw.R
 import com.example.tmshw.databinding.FragmentTaskOneBinding
 
 
-class TaskOneFragment : Fragment(), View.OnClickListener {
+class ArithmeticFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentTaskOneBinding
     private var intA = 0
     private var intB = 0
