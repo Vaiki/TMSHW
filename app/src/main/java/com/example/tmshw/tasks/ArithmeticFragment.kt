@@ -30,7 +30,7 @@ class ArithmeticFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_task_one, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_arithmetic, container, false)
 
         //task 1
         binding.btnABTask1.setOnClickListener(this)
