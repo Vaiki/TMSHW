@@ -23,13 +23,13 @@
                 android:id="@+id/num_task_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/aclonica"
 
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:textColor="@color/white"
+                android:textColor="@color/textNum"
                 android:textSize="48sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/tvTask"
@@ -41,11 +41,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/aclonica"
                 android:padding="10dp"
                 android:text="TASK"
-                android:textColor="@color/white"
+                android:textColor="@color/textTask"
                 android:textSize="48sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -59,6 +59,18 @@
                 app:layout_constraintStart_toEndOf="@+id/num_task_tv"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/andr" />
+
+            <TextView
+                android:id="@+id/tv_dec_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/aldrich"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="34sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTask"
+                tools:text="Timer" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>

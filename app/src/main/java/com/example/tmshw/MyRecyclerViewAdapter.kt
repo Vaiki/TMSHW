@@ -49,6 +49,7 @@ class MyRecyclerViewAdapter(private val taskList: List<Task>) :
 class MyViewHolder(private val binding: ItemTaskBinding) : RecyclerView.ViewHolder(binding.root) {
     fun bind(task: Task) {
         binding.numTaskTv.text = task.numTask.toString()
+        binding.tvDecItem.text = task.description
 
     }
 }

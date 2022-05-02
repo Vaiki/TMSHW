@@ -23,4 +23,5 @@
     <string name="task52">Количество четных чисел в 1..99:</string>
     <string name="task6">6.</string>
     <string name="task62">in Bin:</string>
+    <string name="main_text">MainTest</string>
 </resources>

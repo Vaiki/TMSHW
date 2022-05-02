@@ -19,8 +19,8 @@ class RecyclerViewFragment : Fragment() {
         // Inflate the layout for this fragment
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_recycler_view, container, false)
-        val taskList = mutableListOf<Task>(Task(1), Task(2), Task(3), Task(4), Task(5),
-            Task(6), Task(7), Task(8))
+        val taskList = mutableListOf<Task>(Task(1,"Arithmetic"), Task(2,"Timer"), Task(3,""), Task(4,""), Task(5,""),
+            Task(6,""), Task(7,""), Task(8,""))
 
         val adapter = MyRecyclerViewAdapter(taskList)
         binding.taskRecycler.adapter = adapter
