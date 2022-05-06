@@ -1,6 +1,8 @@
 package com.example.tmshw.tasks
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,14 +10,15 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.tmshw.R
 import com.example.tmshw.databinding.FragmentDolgunecBinding
+import com.google.android.material.progressindicator.LinearProgressIndicator
 import kotlinx.coroutines.*
-import java.lang.Math.random
 import kotlin.random.Random
 
 
 class DolgunecFragment : Fragment() {
     private lateinit var binding: FragmentDolgunecBinding
-    private val winners = mutableListOf<String>()
+    private val winners = mutableMapOf<String, Int>()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -24,65 +27,42 @@ class DolgunecFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_dolgunec, container, false)
 
         binding.btnStart.setOnClickListener {
-            randomData()
+            GlobalScope.launch(Dispatchers.Main) {
+                mining("Farmer 1", binding.progressHorizontal1)
+                mining("Farmer 2", binding.progressHorizontal2)
+                mining("Farmer 3", binding.progressHorizontal3)
+                delay(8000)
+                win()
+            }
             binding.btnStart.isEnabled = false
         }
         return binding.root
     }
 
-    private fun randomData() {
+    private fun mining(company: String, progressHorizontal1: LinearProgressIndicator) {
+        GlobalScope.launch(Dispatchers.Main) {
+            var harwest = 0
+            for (i in 1..15) {
+                delay(500)
+                harwest += Random.nextInt(0, 300)
+                progressHorizontal1.setProgress(harwest, true)
+            }
+            winners[company] = harwest
 
-        GlobalScope.launch(Dispatchers.Main) {
-            for (i in 1..100) {
-                delay(Random.nextLong(1, 400))
-                binding.progressHorizontal1.setProgress(i, true)
-                if (i == 100) {
-                    when {
-                        binding.tvWin1.text == "" -> {
-                            binding.tvWin1.text = getString(R.string.farmer1)
-                            binding.starFarmer1.visibility = View.VISIBLE
-                        }
-                        binding.tvWin2.text == "" -> binding.tvWin2.text =
-                            getString(R.string.farmer1)
-                        else -> binding.tvWin3.text = getString(R.string.farmer1)
-                    }
-                }
-            }
-        }
-        GlobalScope.launch(Dispatchers.Main) {
-            for (i in 1..100) {
-                delay(Random.nextLong(1, 400))
-                binding.progressHorizontal2.setProgress(i, true)
-                if (i == 100) {
-                    when {
-                        binding.tvWin1.text == "" -> {
-                            binding.tvWin1.text = getString(R.string.farmer2)
-                            binding.starFarmer2.visibility = View.VISIBLE
-                        }
-                        binding.tvWin2.text == "" -> binding.tvWin2.text =
-                            getString(R.string.farmer2)
-                        else -> binding.tvWin3.text = getString(R.string.farmer2)
-                    }
-                }
-            }
-        }
-        GlobalScope.launch(Dispatchers.Main) {
-            for (i in 1..100) {
-                delay(Random.nextLong(1, 400))
-                binding.progressHorizontal3.setProgress(i, true)
-                if (i == 100) {
-                    when {
-                        binding.tvWin1.text == "" -> {
-                            binding.tvWin1.text = getString(R.string.farmer3)
-                            binding.starFarmer3.visibility = View.VISIBLE
-                        }
-                        binding.tvWin2.text == "" -> binding.tvWin2.text =
-                            getString(R.string.farmer3)
-                        else -> binding.tvWin3.text = getString(R.string.farmer3)
-                    }
-                }
-            }
         }
     }
+
+    @SuppressLint("SetTextI18n")
+    private fun win() {
+        val podium = mutableListOf<String>()
+        val result = winners.toList().sortedBy { (_, Int) -> Int }.reversed().toMap()
+        for (i in result) {
+            podium.add(i.key)
+        }
+        binding.tvWin1.text = "${podium[0]} - ${result[podium[0]]} t."
+        binding.tvWin2.text = "${podium[1]} - ${result[podium[1]]} t."
+        binding.tvWin3.text = "${podium[2]} - ${result[podium[2]]} t."
+    }
 }
+
 
