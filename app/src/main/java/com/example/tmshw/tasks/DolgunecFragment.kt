@@ -2,7 +2,6 @@ package com.example.tmshw.tasks
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -59,10 +58,13 @@ class DolgunecFragment : Fragment() {
         for (i in result) {
             podium.add(i.key)
         }
-        binding.tvWin1.text = "${podium[0]} - ${result[podium[0]]} t."
-        binding.tvWin2.text = "${podium[1]} - ${result[podium[1]]} t."
-        binding.tvWin3.text = "${podium[2]} - ${result[podium[2]]} t."
+        binding.tvWin1.text = setTv(podium[0], result[podium[0]])
+        binding.tvWin2.text = setTv(podium[1], result[podium[1]])
+        binding.tvWin3.text = setTv(podium[2], result[podium[2]])
     }
+
+    private fun setTv(podium: String, value: Int?): String = "$podium - $value t."
+
 }
 
 
