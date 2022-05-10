@@ -24,4 +24,7 @@
     <string name="task6">6.</string>
     <string name="task62">in Bin:</string>
     <string name="main_text">MainTest</string>
+    <string name="farmer1">Farmer 1</string>
+    <string name="farmer2">Farmer 2</string>
+    <string name="farmer3">Farmer 3</string>
 </resources>

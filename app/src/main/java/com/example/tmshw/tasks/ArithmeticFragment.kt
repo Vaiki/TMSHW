@@ -11,11 +11,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.tmshw.R
-import com.example.tmshw.databinding.FragmentTaskOneBinding
+import com.example.tmshw.databinding.FragmentArithmeticBinding
 
 
 class ArithmeticFragment : Fragment(), View.OnClickListener {
-    private lateinit var binding: FragmentTaskOneBinding
+    private lateinit var binding: FragmentArithmeticBinding
     private var intA = 0
     private var intB = 0
     private var a = 0

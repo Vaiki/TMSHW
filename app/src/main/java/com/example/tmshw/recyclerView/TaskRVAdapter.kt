@@ -10,6 +10,7 @@ import com.example.tmshw.R
 import com.example.tmshw.data.Task
 import com.example.tmshw.tasks.TimerFragment
 import com.example.tmshw.databinding.ItemTaskBinding
+import com.example.tmshw.tasks.DolgunecFragment
 
 class MyRecyclerViewAdapter(private val taskList: List<Task>) :
     RecyclerView.Adapter<MyViewHolder>() {
@@ -36,6 +37,13 @@ class MyRecyclerViewAdapter(private val taskList: List<Task>) :
                     val activity = v!!.context as AppCompatActivity
                     activity.supportFragmentManager.beginTransaction()
                         .replace(R.id.fragment_container_view_tag, TimerFragment())
+                        .addToBackStack(null)
+                        .commit()
+                }
+                2->{
+                    val activity = v!!.context as AppCompatActivity
+                    activity.supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container_view_tag, DolgunecFragment())
                         .addToBackStack(null)
                         .commit()
                 }

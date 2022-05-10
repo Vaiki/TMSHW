@@ -22,7 +22,7 @@ class TaskRVFragment : Fragment() {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_recycler_view, container, false)
         val taskList = mutableListOf<Task>(
-            Task(1,"Arithmetic"), Task(2,"Timer"), Task(3,""), Task(4,""), Task(5,""),
+            Task(1,"Arithmetic"), Task(2,"Timer"), Task(3,"Dolgunec"), Task(4,""), Task(5,""),
             Task(6,""), Task(7,""), Task(8,"")
         )
 
