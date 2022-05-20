@@ -30,32 +30,23 @@ class MyRecyclerViewAdapter(private val taskList: List<Task>) :
         holder.itemView.setOnClickListener { v ->
             when (position) {
                 0 -> {
-                    val activity = v!!.context as AppCompatActivity
-                    activity.supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container_view_tag, ArithmeticFragment())
-                        .addToBackStack(null)
-                        .commit()
+
+                    openFragment(v, ArithmeticFragment())
                 }
 
                 1 -> {
-                    val activity = v!!.context as AppCompatActivity
-                    activity.supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container_view_tag, TimerFragment())
-                        .addToBackStack(null)
-                        .commit()
+
+                    openFragment(v, TimerFragment())
                 }
                 2 -> {
-                    val activity = v!!.context as AppCompatActivity
-                    activity.supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container_view_tag, DolgunecFragment())
-                        .addToBackStack(null)
-                        .commit()
+
+                    openFragment(v, DolgunecFragment())
                 }
                 4 -> {
                     openFragment(v, MainFragment())
                 }
-                5->{
-                    openFragment(v,PlayerFragment())
+                5 -> {
+                    openFragment(v, PlayerFragment())
                 }
             }
         }
