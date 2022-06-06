@@ -35,7 +35,10 @@ class MyService : Service(), MediaPlayer.OnPreparedListener {
     }
 
     override fun onPrepared(p0: MediaPlayer?) {
-        mediaPlayer?.start()
+        if (mediaPlayer?.isPlaying == true){
+            mediaPlayer?.pause()
+        }else mediaPlayer?.start()
+
     }
 
 }

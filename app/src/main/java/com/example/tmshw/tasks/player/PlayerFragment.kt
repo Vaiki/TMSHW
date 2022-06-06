@@ -25,14 +25,14 @@ class PlayerFragment : Fragment() {
             Intent(it.context as AppCompatActivity, MyService::class.java).also { it ->
                 (context as AppCompatActivity).startService(it)
                 binding.tvPlayer.text = getString(R.string.play)
-                binding.btnStart.isEnabled = false
+
             }
         }
         binding.btnStop.setOnClickListener {
             Intent(it.context as AppCompatActivity, MyService::class.java).also { it ->
                 (context as AppCompatActivity).stopService(it)
                 binding.tvPlayer.text = getString(R.string.stop)
-                binding.btnStart.isEnabled = true
+
             }
         }
 
