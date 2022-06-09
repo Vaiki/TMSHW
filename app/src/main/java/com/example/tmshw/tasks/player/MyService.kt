@@ -20,12 +20,13 @@ class MyService : Service(), MediaPlayer.OnPreparedListener {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-
-        mediaPlayer = MediaPlayer.create(this, R.raw.sound)
-        mediaPlayer?.apply {
-            setOnPreparedListener(this@MyService)
-
+        if (mediaPlayer == null) {
+            mediaPlayer = MediaPlayer.create(this, R.raw.sound)
+            mediaPlayer?.start()
+        } else {
+            startOrPause()
         }
+
         return START_STICKY
     }
 
@@ -35,10 +36,14 @@ class MyService : Service(), MediaPlayer.OnPreparedListener {
     }
 
     override fun onPrepared(p0: MediaPlayer?) {
-        if (mediaPlayer?.isPlaying == true){
-            mediaPlayer?.pause()
-        }else mediaPlayer?.start()
 
+
+    }
+
+    private fun startOrPause() {
+        if (mediaPlayer?.isPlaying == true) {
+            mediaPlayer?.pause()
+        } else mediaPlayer?.start()
     }
 
 }

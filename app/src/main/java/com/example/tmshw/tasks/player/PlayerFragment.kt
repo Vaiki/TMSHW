@@ -21,10 +21,22 @@ class PlayerFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_player, container, false)
 
-        binding.btnStart.setOnClickListener {
+        binding.btnStart.setOnClickListener {  when (binding.btnStart.text) {
+            getString(R.string.start) -> {
+                binding.btnStart.text = getString(R.string.pause_btn)
+                binding.tvPlayer.text = getString(R.string.play)
+            }
+            getString(R.string.pause_btn) -> {
+                binding.btnStart.text = getString(R.string.start)
+                binding.tvPlayer.text = getString(R.string.pause_tv)
+            }
+
+        }
+
             Intent(it.context as AppCompatActivity, MyService::class.java).also { it ->
                 (context as AppCompatActivity).startService(it)
-                binding.tvPlayer.text = getString(R.string.play)
+
+
 
             }
         }
@@ -32,7 +44,7 @@ class PlayerFragment : Fragment() {
             Intent(it.context as AppCompatActivity, MyService::class.java).also { it ->
                 (context as AppCompatActivity).stopService(it)
                 binding.tvPlayer.text = getString(R.string.stop)
-
+                binding.btnStart.text = getString(R.string.start)
             }
         }
 

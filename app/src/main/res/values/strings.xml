@@ -35,4 +35,8 @@
     <string name="home">Home</string>
     <string name="store">Store</string>
     <string name="history">History</string>
+    <string name="start">START</string>
+    <string name="stop_btn">STOP</string>
+    <string name="pause_btn">Pause</string>
+    <string name="pause_tv">Pause...</string>
 </resources>
