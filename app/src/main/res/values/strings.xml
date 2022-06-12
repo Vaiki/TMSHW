@@ -24,7 +24,19 @@
     <string name="task6">6.</string>
     <string name="task62">in Bin:</string>
     <string name="main_text">MainTest</string>
+    <string name="play">Playing…</string>
+    <string name="stop">Stop play.</string>
+
     <string name="farmer1">Farmer 1</string>
     <string name="farmer2">Farmer 2</string>
     <string name="farmer3">Farmer 3</string>
+    <string name="add_person">Add</string>
+    <string name="search">Search</string>
+    <string name="home">Home</string>
+    <string name="store">Store</string>
+    <string name="history">History</string>
+    <string name="start">START</string>
+    <string name="stop_btn">STOP</string>
+    <string name="pause_btn">Pause</string>
+    <string name="pause_tv">Pause...</string>
 </resources>

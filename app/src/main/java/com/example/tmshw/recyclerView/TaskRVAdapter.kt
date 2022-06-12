@@ -1,9 +1,11 @@
 package com.example.tmshw.recyclerView
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmshw.tasks.ArithmeticFragment
 import com.example.tmshw.R
@@ -11,6 +13,8 @@ import com.example.tmshw.data.Task
 import com.example.tmshw.tasks.TimerFragment
 import com.example.tmshw.databinding.ItemTaskBinding
 import com.example.tmshw.tasks.DolgunecFragment
+import com.example.tmshw.tasks.player.PlayerFragment
+import com.example.tmshw.tasks.viewModelLiveDataRoom.MainFragment
 
 class MyRecyclerViewAdapter(private val taskList: List<Task>) :
     RecyclerView.Adapter<MyViewHolder>() {
@@ -26,26 +30,23 @@ class MyRecyclerViewAdapter(private val taskList: List<Task>) :
         holder.itemView.setOnClickListener { v ->
             when (position) {
                 0 -> {
-                    val activity = v!!.context as AppCompatActivity
-                    activity.supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container_view_tag, ArithmeticFragment())
-                        .addToBackStack(null)
-                        .commit()
+
+                    openFragment(v, ArithmeticFragment())
                 }
 
                 1 -> {
-                    val activity = v!!.context as AppCompatActivity
-                    activity.supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container_view_tag, TimerFragment())
-                        .addToBackStack(null)
-                        .commit()
+
+                    openFragment(v, TimerFragment())
                 }
-                2->{
-                    val activity = v!!.context as AppCompatActivity
-                    activity.supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container_view_tag, DolgunecFragment())
-                        .addToBackStack(null)
-                        .commit()
+                2 -> {
+
+                    openFragment(v, DolgunecFragment())
+                }
+                4 -> {
+                    openFragment(v, MainFragment())
+                }
+                5 -> {
+                    openFragment(v, PlayerFragment())
                 }
             }
         }
@@ -53,6 +54,15 @@ class MyRecyclerViewAdapter(private val taskList: List<Task>) :
 
     override fun getItemCount(): Int {
         return taskList.size
+    }
+
+    private fun openFragment(v: View, frag: Fragment) {
+
+        val activity = v.context as AppCompatActivity
+        activity.supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container_view_tag, frag)
+            .addToBackStack(null)
+            .commit()
     }
 }
 
