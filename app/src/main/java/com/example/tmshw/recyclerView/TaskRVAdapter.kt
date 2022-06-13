@@ -14,7 +14,7 @@ import com.example.tmshw.tasks.TimerFragment
 import com.example.tmshw.databinding.ItemTaskBinding
 import com.example.tmshw.tasks.DolgunecFragment
 import com.example.tmshw.tasks.player.PlayerFragment
-import com.example.tmshw.tasks.viewModelLiveDataRoom.MainFragment
+
 
 class MyRecyclerViewAdapter(private val taskList: List<Task>) :
     RecyclerView.Adapter<MyViewHolder>() {
@@ -43,7 +43,7 @@ class MyRecyclerViewAdapter(private val taskList: List<Task>) :
                     openFragment(v, DolgunecFragment())
                 }
                 4 -> {
-                    openFragment(v, MainFragment())
+
                 }
                 5 -> {
                     openFragment(v, PlayerFragment())
