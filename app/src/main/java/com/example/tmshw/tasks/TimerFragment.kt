@@ -6,25 +6,26 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import com.example.tmshw.R
+import com.example.tmshw.databinding.FragmentDolgunecBinding
 import com.example.tmshw.databinding.FragmentTimerBinding
 import java.util.*
 
 
-class TimerFragment : Fragment() {
+class TimerFragment : Fragment(R.layout.fragment_timer) {
 
-    private lateinit var binding: FragmentTimerBinding
+    private var _binding: FragmentTimerBinding? = null
+    private val binding get() = _binding!!
     private var timer: CountDownTimer? = null
     private var timerRunning = false
     private var time = 300000L
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_timer, container, false)
+        _binding = FragmentTimerBinding.inflate(inflater, container, false)
 
         binding.btnStart.setOnClickListener(
             View.OnClickListener {

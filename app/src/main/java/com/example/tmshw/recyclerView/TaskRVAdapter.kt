@@ -4,24 +4,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmshw.tasks.ArithmeticFragment
 import com.example.tmshw.R
 import com.example.tmshw.data.Task
+import com.example.tmshw.databinding.ItemRoomBinding
 import com.example.tmshw.tasks.TimerFragment
 import com.example.tmshw.databinding.ItemTaskBinding
 import com.example.tmshw.tasks.DolgunecFragment
 import com.example.tmshw.tasks.player.PlayerFragment
+import com.example.tmshw.tasks.room.RoomFragment
 
 
 class MyRecyclerViewAdapter(private val taskList: List<Task>) :
     RecyclerView.Adapter<MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater: LayoutInflater = LayoutInflater.from(parent.context)
-        val binding: ItemTaskBinding =
-            DataBindingUtil.inflate(layoutInflater, R.layout.item_task, parent, false)
+        val binding = ItemTaskBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MyViewHolder(binding)
     }
 
@@ -47,6 +47,9 @@ class MyRecyclerViewAdapter(private val taskList: List<Task>) :
                 }
                 5 -> {
                     openFragment(v, PlayerFragment())
+                }
+                6 -> {
+                    openFragment(v, RoomFragment())
                 }
             }
         }

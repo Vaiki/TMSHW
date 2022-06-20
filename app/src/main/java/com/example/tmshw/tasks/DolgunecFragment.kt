@@ -6,16 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import com.example.tmshw.R
+import com.example.tmshw.databinding.FragmentArithmeticBinding
 import com.example.tmshw.databinding.FragmentDolgunecBinding
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import kotlinx.coroutines.*
 import kotlin.random.Random
 
 
-class DolgunecFragment : Fragment() {
-    private lateinit var binding: FragmentDolgunecBinding
+class DolgunecFragment : Fragment(R.layout.fragment_dolgunec) {
+    private var _binding: FragmentDolgunecBinding? = null
+    private val binding get() = _binding!!
     private val winners = mutableMapOf<String, Int>()
 
     override fun onCreateView(
@@ -23,7 +24,8 @@ class DolgunecFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_dolgunec, container, false)
+        _binding = FragmentDolgunecBinding.inflate(inflater, container, false)
+
 
         binding.btnStart.setOnClickListener {
             GlobalScope.launch(Dispatchers.Main) {

@@ -9,13 +9,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import com.example.tmshw.R
 import com.example.tmshw.databinding.FragmentArithmeticBinding
+import com.example.tmshw.databinding.FragmentRoomBinding
 
 
-class ArithmeticFragment : Fragment(), View.OnClickListener {
-    private lateinit var binding: FragmentArithmeticBinding
+class ArithmeticFragment : Fragment(R.layout.fragment_arithmetic), View.OnClickListener {
+    private var _binding: FragmentArithmeticBinding? = null
+    private val binding get() = _binding!!
     private var intA = 0
     private var intB = 0
     private var a = 0
@@ -29,8 +30,9 @@ class ArithmeticFragment : Fragment(), View.OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_arithmetic, container, false)
+
+        _binding = FragmentArithmeticBinding.inflate(inflater, container, false)
+
 
         //task 1
         binding.btnABTask1.setOnClickListener(this)
@@ -215,6 +217,7 @@ class ArithmeticFragment : Fragment(), View.OnClickListener {
             }
         }
         return sum
+
     }
 
 
