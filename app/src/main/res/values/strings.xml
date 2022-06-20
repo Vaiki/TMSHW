@@ -39,4 +39,13 @@
     <string name="stop_btn">STOP</string>
     <string name="pause_btn">Pause</string>
     <string name="pause_tv">Pause...</string>
+    <string name="enter_name">Введите имя</string>
+    <string name="employee">Сотрудники</string>
+    <string name="enter_last_name">Введите фамилию</string>
+    <string name="department">Департамент</string>
+    <string name="save">Сохранить</string>
+    <string name="delete">Удалить</string>
+    <string name="position">Должность</string>
+    <string name="update">Update</string>
+
 </resources>

@@ -7,19 +7,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import com.example.tmshw.R
 import com.example.tmshw.databinding.FragmentPlayerBinding
+import com.example.tmshw.databinding.FragmentTimerBinding
 
 
-class PlayerFragment : Fragment() {
+class PlayerFragment : Fragment(R.layout.fragment_player) {
 
-    lateinit var binding: FragmentPlayerBinding
+    private var _binding: FragmentPlayerBinding? = null
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_player, container, false)
+        _binding = FragmentPlayerBinding.inflate(inflater, container, false)
 
         binding.btnStart.setOnClickListener {  when (binding.btnStart.text) {
             getString(R.string.start) -> {
