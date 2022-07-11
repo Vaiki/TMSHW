@@ -13,6 +13,7 @@ import com.example.tmshw.databinding.ItemRoomBinding
 import com.example.tmshw.tasks.TimerFragment
 import com.example.tmshw.databinding.ItemTaskBinding
 import com.example.tmshw.tasks.DolgunecFragment
+import com.example.tmshw.tasks.SensorFragment
 import com.example.tmshw.tasks.player.PlayerFragment
 import com.example.tmshw.tasks.room.RoomFragment
 
@@ -50,6 +51,9 @@ class MyRecyclerViewAdapter(private val taskList: List<Task>) :
                 }
                 6 -> {
                     openFragment(v, RoomFragment())
+                }
+                7 -> {
+                    openFragment(v,SensorFragment())
                 }
             }
         }
