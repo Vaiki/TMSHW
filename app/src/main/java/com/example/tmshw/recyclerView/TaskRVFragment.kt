@@ -29,7 +29,7 @@ class TaskRVFragment : Fragment() {
             Task(5, "ViewModel"),
             Task(6, "Player"),
             Task(7, "Room"),
-            Task(8, "")
+            Task(8, "Sensors")
         )
 
         val adapter = MyRecyclerViewAdapter(taskList)
