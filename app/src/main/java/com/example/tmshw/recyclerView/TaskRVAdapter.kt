@@ -16,6 +16,7 @@ import com.example.tmshw.tasks.DolgunecFragment
 import com.example.tmshw.tasks.SensorFragment
 import com.example.tmshw.tasks.player.PlayerFragment
 import com.example.tmshw.tasks.room.RoomFragment
+import com.example.tmshw.tasks.rxjava.SignInFragment
 
 
 class MyRecyclerViewAdapter(private val taskList: List<Task>) :
@@ -54,6 +55,9 @@ class MyRecyclerViewAdapter(private val taskList: List<Task>) :
                 }
                 7 -> {
                     openFragment(v,SensorFragment())
+                }
+                8 ->{
+                    openFragment(v,SignInFragment())
                 }
             }
         }
