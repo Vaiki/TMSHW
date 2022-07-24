@@ -39,6 +39,7 @@ dependencies {
     def lifecycle_version = "2.4.1"
     def room_version = "2.4.2"
     def faker_version = "1.11.0"
+    def koin_version ="3.2"
     implementation 'com.github.javafaker:javafaker:1.0.2'
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
@@ -68,5 +69,13 @@ dependencies {
     implementation('com.getbase:floatingactionbutton:1.10.1')
     //glide
     implementation('com.github.bumptech.glide:glide:4.13.0')
+
+// https://mvnrepository.com/artifact/io.insert-koin/koin-android
+    implementation("io.insert-koin:koin-android:3.2.0")
+
+    implementation ("io.insert-koin:koin-core:3.2")
+    // Koin Test
+    testImplementation ("io.insert-koin:koin-test:3.2")
+    testImplementation ("io.insert-koin:koin-test-junit4:3.2")
 
 }

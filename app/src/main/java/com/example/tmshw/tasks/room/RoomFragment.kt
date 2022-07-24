@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tmshw.R
 import com.example.tmshw.databinding.FragmentRoomBinding
 import com.example.tmshw.tasks.room.adapter.EmployeeAdapter
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RoomFragment : Fragment(R.layout.fragment_room) {
     private var _binding: FragmentRoomBinding? = null
@@ -24,8 +25,8 @@ class RoomFragment : Fragment(R.layout.fragment_room) {
     private var idEmployee = 0
     private var imageUri: Uri? = null
 
-    private val viewModel: MainViewModel by activityViewModels()
-
+    // private val viewModel: MainViewModel by activityViewModels()
+    private val viewModel: MainViewModel by viewModel()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentRoomBinding.bind(view)
@@ -113,12 +114,14 @@ class RoomFragment : Fragment(R.layout.fragment_room) {
         }
     }
 
-    private fun getEmployee(): Employee = Employee(idEmployee,
+    private fun getEmployee(): Employee = Employee(
+        idEmployee,
         binding.teName.text.toString(),
         binding.teLastName.text.toString(),
         binding.autoCompletePosition.text.toString(),
         binding.autoCompleteDepartment.text.toString(),
-        avatarUrl)
+        avatarUrl
+    )
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -138,13 +141,17 @@ class RoomFragment : Fragment(R.layout.fragment_room) {
     ) {
         if (it.resultCode == Activity.RESULT_OK) {
             imageUri = it.data?.data
-            viewModel.insert(Employee(idEmployee,
-                binding.teName.text.toString(),
-                binding.teLastName.text.toString(),
-                binding.autoCompletePosition.text.toString(),
-                binding.autoCompleteDepartment.text.toString(),
-                imageUri.toString()))
-        clearView()
+            viewModel.insert(
+                Employee(
+                    idEmployee,
+                    binding.teName.text.toString(),
+                    binding.teLastName.text.toString(),
+                    binding.autoCompletePosition.text.toString(),
+                    binding.autoCompleteDepartment.text.toString(),
+                    imageUri.toString()
+                )
+            )
+            clearView()
         }
     }
 }
